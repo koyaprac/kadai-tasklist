@@ -1,0 +1,12 @@
+<div class='row'>
+  <div class='col-md-6 col-md-offset-3'>
+    <h2>Profile</h2>
+    <h4>Name</h4>
+    <p><%= @user.name %></p>
+    <div id='margin_s'></div>
+    <h4>Email</h4>
+    <p><%= @user.email %></p>
+    <div id='margin_s'></div>
+    <%= link_to '登録情報を変更したい方はこちら', edit_user_path(@user) %>
+  </div>
+</div>

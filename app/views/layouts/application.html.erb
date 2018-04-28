@@ -12,7 +12,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-
+    <style>
+      #margin_s {margin-bottom: 20px; }
+    </style>
   </head>
 
   <body>
@@ -31,7 +33,13 @@
         </div>
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li><%= link_to "新規タスクの追加", new_task_path %></li>
+            <% if logged_in? %>
+              <li><%= link_to current_user.name, user_path(current_user) %></li>
+              <li><%= link_to 'Logout', logout_path, method: :delete %></li>
+            <% else %>
+              <li><%= link_to "Sign up", signup_path %></li>
+              <li><%= link_to 'Log in', login_path %></li>
+            <% end %>
           </ul>
         </div>
       </div>
